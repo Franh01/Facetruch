@@ -1,0 +1,72 @@
+.navBarContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #777f93;
+    padding: 5px 5px 0px 5px;
+    border-bottom: 5px solid #505050;
+    min-width: 2000px;
+    width: auto !important;
+    width: 2000px;
+}
+
+.position {
+    position: fixed;
+    display: flex;
+    z-index: 999;
+
+}
+
+.logoInputContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 40px;
+    max-height: 40px;
+    padding-right: 10px;    
+}
+
+.plusImg {
+    max-width: 64px;
+    margin: -12px 0px -12px 16px;
+}
+
+.searchInput {
+    max-height: 40px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #fffae9;
+    outline: none;
+    border: none;
+    padding: 0px 22px;
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.searchInputButton {
+    max-height: 40px;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+.searchInputButton:hover {
+    background-color: #dadada;;
+}
+
+.searchIcon {
+    max-width: 30px;
+    box-sizing: content-box;
+    padding: 3px 2px 0px 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    .plusImg {
+        max-width: 64px;
+        margin: -12px 0px -12px -6px;
+    }
+}

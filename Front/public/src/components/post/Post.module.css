@@ -1,0 +1,46 @@
+.cardContainer {
+    background-color: rgb(116 137 255 / 68%);
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    padding: 10px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px rgb(255 255 255 / 0%), 0.3em 0.3em 1em rgb(0 0 0 / 59%);
+}
+
+.name {
+    margin: 2px 0px 0px 0px;
+}
+
+.nameContainer {
+    min-width: 340px;
+    border-bottom: 1px solid black;
+}
+
+.titulo {
+    margin: 11px 0px -14px 0px;
+}
+
+.content {
+    margin: 13px 0px 6px 0px;
+}
+
+.image {
+    border-radius: 20px;
+    min-width: 300px;    
+    max-width: 780px;
+}
+
+.deleteBtn {
+    border: none;
+    position: absolute;
+    margin: 18px 715px;
+    background: red;
+    padding: 7px 14px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
