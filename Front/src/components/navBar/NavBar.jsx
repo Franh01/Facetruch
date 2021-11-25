@@ -4,14 +4,10 @@ import { Link } from 'react-router-dom';
 import plusImg from '../../img/plusbtn.png';
 import searchImg from '../../img/searchIcon.png';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-// import axios from 'axios';
-// import { axiosGetPost } from '../../redux/actions/postInfoAction';
 
 export default function NavBar() {
     
     const [input, setInput] = useState('');
-    // const dispatch = useDispatch()
     return (
         <div>
             <header className={s.position}>
@@ -24,8 +20,7 @@ export default function NavBar() {
                             }
                         }></input>
                         <button className={s.searchInputButton}><img className={s.searchIcon} src={searchImg} alt='search button' /></button>
-                        <Link to='/postmaker'><img className={s.plusImg} src={plusImg} alt='create new post' /></Link>
-                        {/* <button onClick={handleOnClick()}></button> */}
+                        <Link to='/postform'><img className={s.plusImg} src={plusImg} alt='create new post' /></Link>
                     </span>
                 </span>
             </header>
