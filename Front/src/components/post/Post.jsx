@@ -12,22 +12,29 @@ export default function Posts({ id, name, title, content, url }) {
     const [stateUpdate, setStateUpdate] = useState(postsState)
     
     function handleOnClick() {
-        console.log(postsState)
         dispatch(deletePost(id))
         setStateUpdate(postsState)
+        setTimeout(() => {
+            dispatch(getPosts())
+        }, 100);
     }
     
     useEffect(() => {
         dispatch(getPosts())
-    }, [dispatch, stateUpdate])
+    }, [stateUpdate])
     return (
         <div>
             <div className={s.cardContainer}>
-                <button className={s.deleteBtn}onClick={handleOnClick}>X</button>
-                <div className={s.nameContainer}><h3 className={s.name}>{name}</h3></div>                
-                <h2 className={s.titulo}>{title}</h2>
-                <p className={s.content}>{content}</p>
-                <a href={url} target='_blank' rel="noreferrer"><img className={s.image} src={url} alt='userimg'/></a>
+                <div className={s.textContainer}>
+                    <button className={s.deleteBtn}onClick={handleOnClick}>X</button>
+                    <div className={s.nameContainer}><h3 className={s.name}>{name}</h3></div>                
+                    <h2 className={s.titulo}>{title}</h2>
+                    <p className={s.content}>{content}</p>
+                </div>
+                <div className={s.imagenes}>
+                    <a href={url} target='_blank' rel="noreferrer"><img className={s.image} src={url} alt='userimg' /></a>
+                </div>
+                
             </div>            
         </div>
     );

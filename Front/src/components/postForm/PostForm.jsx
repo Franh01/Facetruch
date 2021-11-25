@@ -10,13 +10,20 @@ export default function PostForm() {
     const [content, setContent] = useState('');
     const dispatch = useDispatch()
     function handleOnClick(e) {
-        e.preventDefault()
-        dispatch(newPost({
-            name,
-            title,
-            url,
-            content
-        }));
+        if (url) {
+            dispatch(newPost({
+                name,
+                title,
+                url,
+                content
+            }))
+        } else {
+            dispatch(newPost({
+                name,
+                title,
+                content
+            }))
+        }
     }
     return (
         <div className={s.container}>

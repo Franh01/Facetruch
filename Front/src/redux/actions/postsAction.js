@@ -24,6 +24,9 @@ export const deletePost = (id) => {
                     type: DELETE_POST
                 })
             })
+            .then(() => {
+                axios.get('http://localhost:1337/posts')
+            })
     }
 }
 
