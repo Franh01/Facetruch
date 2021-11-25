@@ -3,23 +3,18 @@ import Post from '../post/Post';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getPosts } from '../../redux/actions/postsAction';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 
 
 export default function Posts() {
     const dispatch = useDispatch()
     const postsReducer = useSelector((state) => state.postsReducer.posts);
-    const [pageState, setPageState] = useState(postsReducer);
     
     useEffect(() => {
         dispatch(getPosts())
-    }, [pageState, dispatch])
+    }, [dispatch])
 
-    useEffect(() => {
-        setPageState(postsReducer)
-    },[dispatch])
-    
     // console.log(postsReducer)
     
     return (

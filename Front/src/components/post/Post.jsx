@@ -21,7 +21,7 @@ export default function Posts({ id, name, title, content, url }) {
     
     useEffect(() => {
         dispatch(getPosts())
-    }, [stateUpdate])
+    }, [dispatch, stateUpdate])
     return (
         <div>
             <div className={s.cardContainer}>
