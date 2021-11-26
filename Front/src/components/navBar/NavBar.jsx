@@ -8,15 +8,19 @@ import { useDispatch } from 'react-redux';
 import { getPosts, getPostsByParams } from '../../redux/actions/postsAction';
 
 export default function NavBar() {
+    const [input, setInput] = useState('');
     const dispatch = useDispatch();
     function handleOnClick() {
         setTimeout(() => {
             dispatch(getPosts())
         }, 200);
+        setInput('')
     }
-    const [input, setInput] = useState('');
 
     function handleOnSearch() {
+        if (input === '') {
+            return alert('Debes intruducir un nombre o titulo');
+        }
         setTimeout(() => {
             dispatch(getPostsByParams(input))
         }, 500);
@@ -28,7 +32,7 @@ export default function NavBar() {
             <header className={s.position}>
                 <span className={s.navBarContainer}>
                     <span className={s.logoInputContainer}>
-                        <Link to='/'><img className={s.logo} src={logo} alt='facetruch logo' onClick={handleOnClick()}/></Link>
+                        <Link to='/'><img className={s.logo} src={logo} alt='facetruch logo' onClick={()=>handleOnClick()}/></Link>
                         <input className={s.searchInput} type='text' placeholder='Search...' value={input} onChange={
                             (e) => {
                                 setInput(e.target.value);
