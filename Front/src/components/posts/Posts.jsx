@@ -41,7 +41,7 @@ export default function Posts() {
                     />
                 ))}
             </div> : <div></div>}
-            {postsReducer.length < 1 ? <div className={s.noPosts}><h1>Aun no has posts disponibles</h1></div> : <div></div>}
+            {postsReducer.length < 1 ? <div className={s.noPosts}><h1>Aun no hay posts disponibles</h1></div> : <div></div>}
         </div>
     )
 }

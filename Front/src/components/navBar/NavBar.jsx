@@ -5,7 +5,7 @@ import plusImg from '../../img/plusbtn.png';
 import searchImg from '../../img/searchIcon.png';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getPosts } from '../../redux/actions/postsAction';
+import { getPosts, getPostsByParams } from '../../redux/actions/postsAction';
 
 export default function NavBar() {
     const dispatch = useDispatch();
@@ -15,6 +15,14 @@ export default function NavBar() {
         }, 200);
     }
     const [input, setInput] = useState('');
+
+    function handleOnSearch() {
+        setTimeout(() => {
+            dispatch(getPostsByParams(input))
+        }, 500);
+        console.log(input)
+    }
+
     return (
         <div>
             <header className={s.position}>
@@ -26,7 +34,11 @@ export default function NavBar() {
                                 setInput(e.target.value);
                             }
                         }></input>
-                        <button className={s.searchInputButton}><img className={s.searchIcon} src={searchImg} alt='search button' /></button>
+                        <Link to='/searchedposts'><button
+                            onClick={() => {handleOnSearch()}}
+                            className={s.searchInputButton}>
+                            <img className={s.searchIcon} src={searchImg} alt='search button'  />
+                        </button></Link>
                         <Link to='/postform'><img className={s.plusImg} src={plusImg} alt='create new post' /></Link>
                     </span>
                 </span>

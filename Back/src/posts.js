@@ -26,6 +26,11 @@ let posts = [{
 
 app.get('/posts', (req, res) => {//por ejemplo aca borrar '/posts' y reemplazarlo por '/'
     if (req.query.name) {
+        let foundPosts = posts.filter(post => post.name.toLowerCase().includes(req.query.name.toLocaleLowerCase()) || post.title.toLowerCase().includes(req.query.name.toLocaleLowerCase()));
+        res.json(foundPosts);
+    }
+
+    if (req.query.name) {
         res.json(posts.filter(post => post.name.toLocaleLowerCase().includes(req.query.name.toLocaleLowerCase())));//filtra por el query name si coincide
     }
     if (req.query.title) {

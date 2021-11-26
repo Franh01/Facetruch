@@ -1,0 +1,1 @@
+//! hacer un estado para pasarle al onclick y usarlo con useeffect para que en cada delete se actualice el componente

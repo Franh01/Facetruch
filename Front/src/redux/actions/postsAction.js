@@ -1,5 +1,5 @@
 //Actions
-import { GET_POSTS, DELETE_POST, NEW_POST } from "./actionTypes/actionTypes";
+import { GET_POSTS, DELETE_POST, NEW_POST, GET_POSTS_BY_PARAMS } from "./actionTypes/actionTypes";
 import axios from 'axios';
 
 export const getPosts = () => {
@@ -42,6 +42,19 @@ export const newPost = ({name, title, url, content}) => {
             })
             .then(() => {
                 axios.get('http://localhost:1337/posts')
+            })
+    }
+}
+
+export const getPostsByParams = (value) => {
+    return (dispatch) => {
+        axios.get(`http://localhost:1337/posts?name=${value}`)
+            .then(r => r.data)
+            .then(data => {
+                dispatch({
+                    type: GET_POSTS_BY_PARAMS,
+                    payload: data
+                })
             })
     }
 }
