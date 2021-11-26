@@ -24,6 +24,7 @@ export default function PostForm() {
                 content
             }))
         }
+        alert('Tu post fue creado con exito')
     }
     return (
         <div className={s.container}>
@@ -42,7 +43,7 @@ export default function PostForm() {
                         }}></input>
                     </div>
                     <div>
-                        <h4 className={s.titles}>Imagen:</h4>
+                        <h4 className={s.titles}>Imagen(opcional):</h4>
                         <input className={s.inputs} type='text' placeholder='Image URL...' value={url} onChange={e => {
                             setUrl(e.target.value)
                         }}></input>
@@ -52,7 +53,7 @@ export default function PostForm() {
                         <textarea className={s.inputContent} type='text' placeholder='Cuentanos algo!' required value={content} onChange={e => {
                             setContent(e.target.value)
                         }}></textarea></div>
-                    <div>
+                    <div className={s.formBtnContainer}>
                         <button className={s.formBtn} type='submit' onClick={handleOnClick}>Publicar</button>
                     </div>
                 </form>

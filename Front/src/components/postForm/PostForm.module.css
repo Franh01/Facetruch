@@ -1,7 +1,6 @@
 .container {
     display: flex;
     justify-content: center;
-
 }
 
 .formContainer {
@@ -9,8 +8,10 @@
     justify-content: center;
     background-color: rgb(116 137 255 / 68%);
     margin-top: 200px;
-    padding: 25px 36px 30px 36px;
+    padding: 25px 36px 60px 36px;
     border-radius: 10px;
+    max-width: 412px;
+    box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px rgb(255 255 255 / 0%), 0.3em 0.3em 1em rgb(0 0 0 / 59%);
 }
 
 .form {
@@ -49,6 +50,11 @@ inputs:focus {
     border-radius: 5px;
 }
 
+.formBtnContainer {
+    position: absolute;
+    margin: 406px 0px 0px 0px;
+}
+
 .formBtn {
     font-family: inherit;
     border-radius: 36px;
@@ -56,10 +62,16 @@ inputs:focus {
     border: none;
     background-color: efefef;
     cursor: pointer;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);;
+    transition-duration: .5s;
 }
+
 
 .formBtn:hover {
     background-color: #dadada;
+    padding: 10px 16px;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: .5s;
 }
 
 .titles {
@@ -69,10 +81,13 @@ inputs:focus {
 @media only screen and (max-width: 768px) {
     .inputs {
         width: 100%;
-    }
-    
+    }    
     .inputContent {
         width: 100%;
+    }
+    .formContainer{
+        width: 100%;
+        margin: 100px 0px 0px 0px;
     }
 }
 

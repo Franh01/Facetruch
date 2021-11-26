@@ -14,14 +14,23 @@ export default function Posts() {
     useEffect(() => {
         dispatch(getPosts())
     }, [dispatch])
-
-    // console.log(postsReducer)
     
     return (
         <div className={s.mainContainer}>            
-            <div className={s.cardsContainer}>
-            {
-                postsReducer.map(p => (
+            {postsReducer.length > 0 ? <div className={s.cardsContainer}>
+            {postsReducer.some(p => p.url === '') ?
+                    postsReducer.map(p => (
+                    
+                    <Post
+                        id={p.id}
+                        key={p.id}
+                        name={p.name}
+                        title={p.title}
+                        content={p.content}
+                    />
+                ))
+                :postsReducer.map(p => (
+                    
                     <Post
                         id={p.id}
                         key={p.id}
@@ -30,9 +39,9 @@ export default function Posts() {
                         content={p.content}
                         url={p.url}
                     />
-                ))
-                }
-            </div>
+                ))}
+            </div> : <div></div>}
+            {postsReducer.length < 1 ? <div className={s.noPosts}><h1>Aun no has posts disponibles</h1></div> : <div></div>}
         </div>
     )
 }

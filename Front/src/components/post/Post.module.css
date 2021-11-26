@@ -19,13 +19,11 @@
     margin: 2px 0px 0px 0px;
 }
 
-.nameContainer {
-    min-width: 340px;
-    border-bottom: 1px solid black;
-}
 
 .titulo {
     margin: 11px 0px -14px 0px;
+    border-top: 1px solid black;
+    min-width: 100%;
 }
 
 .content {
@@ -35,15 +33,13 @@
 .image {
     border-radius: 20px;
     min-width: 300px;    
-    max-width: 780px;
+    max-width: 100%;
 }
 
 .deleteBtn {
     border: none;
-    position: absolute;
-    margin: 18px 715px;
     background: red;
-    padding: 7px 14px;
+    padding: 6px 13px;
     cursor: pointer;
     font-size: 20px;
     border-radius: 20px;
@@ -53,4 +49,15 @@
     display: flex;
     justify-content: center;
 }
+
+.firstLine{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* @media only screen and (max-width: 768px) {
+    
+} */
+
+
 

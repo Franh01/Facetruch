@@ -11,3 +11,7 @@
     display: flex;
     justify-content: center;
 }
+
+.noPosts{
+    margin-top: 100px;
+}

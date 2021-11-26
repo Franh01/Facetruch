@@ -25,15 +25,20 @@ export default function Posts({ id, name, title, content, url }) {
     return (
         <div>
             <div className={s.cardContainer}>
-                <div className={s.textContainer}>
-                    <button className={s.deleteBtn}onClick={handleOnClick}>X</button>
+                <div className={s.firstLine}>
                     <div className={s.nameContainer}><h3 className={s.name}>{name}</h3></div>                
+                    <button className={s.deleteBtn} onClick={handleOnClick}>X</button>
+                </div>
+                <div className={s.textContainer}>
                     <h2 className={s.titulo}>{title}</h2>
                     <p className={s.content}>{content}</p>
                 </div>
-                <div className={s.imagenes}>
-                    <a href={url} target='_blank' rel="noreferrer"><img className={s.image} src={url} alt='userimg' /></a>
-                </div>
+                {url !== undefined ?
+                    <div className={s.imagenes}>
+                        <a href={url} target='_blank' rel="noreferrer"><img className={s.image} src={url} alt='userimg' /></a>
+                    </div>
+                    :
+                    <div></div>}
                 
             </div>            
         </div>
