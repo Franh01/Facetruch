@@ -38,11 +38,21 @@
 
 .deleteBtn {
     border: none;
-    background: red;
+    /* background: red; */
+    background-color: gray;
     padding: 6px 13px;
     cursor: pointer;
     font-size: 20px;
     border-radius: 20px;
+    color: white;
+    transition-timing-function: cubic-bezier(.17,.67,.83,.67);
+    transition-duration: .2s;
+}
+
+.deleteBtn:hover {
+    background-color: red;
+    transition-timing-function: cubic-bezier(.17,.67,.83,.67);
+    transition-duration: .4s;
 }
 
 .imagenes {
@@ -53,6 +63,24 @@
 .firstLine{
     display: flex;
     justify-content: space-between;
+}
+
+.editImg {
+    max-width: 40px;
+}
+
+.editBtn {
+    border: none;
+    height: fit-content;
+    width: fit-content;
+    background: inherit;
+    cursor: pointer;
+    /* margin-right: 5px; */
+}
+
+.editBtn:focus {
+    border: none;
+    outline: none;    
 }
 
 @media only screen and (max-width: 768px) {

@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     background-color: rgb(116 137 255 / 68%);
-    margin-top: 200px;
+    margin-top: 100px;
     padding: 25px 36px 60px 36px;
     border-radius: 10px;
     max-width: 412px;
@@ -77,6 +77,8 @@ inputs:focus {
 .titles {
     margin: 0px 0px;
 }
+
+
 
 @media only screen and (max-width: 768px) {
     .inputs {
