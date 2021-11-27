@@ -4,6 +4,7 @@ import { deletePost, getPosts } from '../../redux/actions/postsAction';
 import { useEffect, useState } from 'react';
 import editImg from '../../img/editImg.png';
 import { Link } from 'react-router-dom';
+import { exportId } from '../../redux/actions/exportIdAction';
 
 //! hacer un estado para pasarle al onclick y usarlo con useeffect para que en cada delete se actualice el componente
 
@@ -22,7 +23,7 @@ export default function Posts({ id, name, title, content, url }) {
     }
 
     function handleOnEdit() {
-
+        dispatch(exportId(id))
     }
     
     useEffect(() => {
@@ -35,7 +36,7 @@ export default function Posts({ id, name, title, content, url }) {
                     <div className={s.nameContainer}><h3 className={s.name}>{name}</h3></div> 
                     <div className={s.buttonsContainer}>
                         <Link to={`/edit/${id}`}>
-                            <button className={s.editBtn}><img src={editImg} alt="edit button" 
+                            <button className={s.editBtn} onClick={handleOnEdit}><img src={editImg} alt="edit button" 
                             style={{
                                 width: '44px',
                                 margin: '-16px 0px'

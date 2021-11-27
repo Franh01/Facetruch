@@ -17,8 +17,9 @@ export default function Posts() {
     
     return (
         <div className={s.mainContainer}>            
-            {postsReducer.length > 0 ? <div className={s.cardsContainer}>
-            {postsReducer.some(p => p.url === '') ?
+            {postsReducer.length > 0 ?
+             <div className={s.cardsContainer}>
+                {postsReducer.some(p => p.url === '') ?
                     postsReducer.map(p => (
                     
                     <Post
@@ -40,7 +41,9 @@ export default function Posts() {
                         url={p.url}
                     />
                 ))}
-            </div> : <div></div>}
+            </div>
+             : 
+             <div></div>}
             {postsReducer.length < 1 ? <div className={s.noPosts}><h1>Aun no hay posts disponibles</h1></div> : <div></div>}
         </div>
     )
